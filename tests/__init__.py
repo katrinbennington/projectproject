@@ -6,16 +6,23 @@ from src.product import Product
 
 @pytest.fixture
 def apple():
-    return Product('Яблоко', 'Антоновка', 50, 25)
+    return Product('Яблоко', 'Антоновка', 50.00, 25)
+
 
 @pytest.fixture
 def banana():
     return Product('Банан', 'Эквадор импорт', 50.99, 12)
 
+
 @pytest.fixture
 def category_fruit(apple, banana):
     return Category('Фрукты', 'ЗОЖ', [apple, banana])
 
+
+def test_category(category_fruit, apple, banana):
+    assert category_fruit.name == 'Фрукты'
+    assert category_fruit.description == 'ЗОЖ'
+    assert category_fruit.products == [apple, banana]
 
 @pytest.fixture
 def test_summ(category_fruit):
@@ -31,11 +38,7 @@ print(f"Общее кол-во категорий: {Category.cnt_category}")
 print(f"Общее кол-во уникальных продуктов: {Category.cnt_unique_item}")
 
 
-@pytest.fixture
-def test_category(category_fruit):
-    assert category_fruit.name == 'Фрукты'
-    assert category_fruit.description == 'ЗОЖ'
-    assert category_fruit.products == [apple, banana]
+
 
 
 

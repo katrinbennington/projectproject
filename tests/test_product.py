@@ -1,5 +1,5 @@
 import pytest
-from project.src.product import Product
+from src.product import Product
 
 @pytest.fixture()
 def product_apple():
