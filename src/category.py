@@ -5,10 +5,10 @@ class Category:
     description: str
     products: list
 
-    def __init__(self, name, description, products):
+    def __init__(self, name: str, description: str, products: list):
         self.name = name
         self.description = description
         self.products = products
 
-        Category.cnt_category = 1
+        Category.cnt_category += 1
         Category.cnt_unique_item = self.cnt_category
