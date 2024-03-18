@@ -15,11 +15,15 @@ def banana():
 
 @pytest.fixture()
 def category_fruit(apple, banana):
-    return Category('Фрукты', 'ЗОЖ', [apple, banana])
+    return Category('Фрукты', 'ЗОЖ', [apple, banana], 1, 1)
 
 
 def test_category(category_fruit, apple, banana):
     assert category_fruit.name == 'Фрукты'
     assert category_fruit.description == 'ЗОЖ'
     assert category_fruit.products == [apple, banana]
+    assert category_fruit.cnt_category == 1
+    assert category_fruit.cnt_unique_item == 2
+
+
 
