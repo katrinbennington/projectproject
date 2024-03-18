@@ -15,7 +15,7 @@ def banana():
 
 @pytest.fixture()
 def category_fruit(apple, banana):
-    return Category('Фрукты', 'ЗОЖ', [apple, banana], 1, 1)
+    return Category('Фрукты', 'ЗОЖ', [apple, banana])
 
 
 def test_category(category_fruit, apple, banana):
