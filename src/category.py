@@ -5,12 +5,14 @@ class Category:
     def __init__(self, name: str, description: str, products: list):
         self.name = name
         self.description = description
-        self.products = products
-        #self.cnt_category = len.products
-        #self.cnt_unique_item = self.cnt_category
+        self.__products = products
         Category.cnt_category += 1
-        Category.cnt_unique_item += len(self.products)
+        Category.cnt_unique_item += len(self.__products)
+        Category.items = []
 
-
-    # def add_category(self, products):
-    #     return products in self.cnt_category
+    @property
+    def products(self):
+        items = ''
+        for product in self.__products:
+            items += f'{product.name}, {product.price} руб. Остаток: {product.quantity} шт.\n'
+        return items
