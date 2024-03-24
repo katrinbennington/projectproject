@@ -1,6 +1,7 @@
 import pytest
 from src.product import Product
 
+
 @pytest.fixture()
 def product_apple():
     return Product('Яблоко', 'Антоновка', 50.00, 25)

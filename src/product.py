@@ -17,14 +17,12 @@ class Product:
         return new_product
 
     @property
+    def new_price(self):
+        return self._price
+
+    @new_price.setter
     def new_price(self, value):
         if value <= 0:
             print("Введена некорректная цена")
-            return value
-
-
-    @property
-    def new_price(self, value):
-        self._price = value
-        return self._price
-
+        else:
+            self._price = value
