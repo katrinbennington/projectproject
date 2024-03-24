@@ -9,7 +9,7 @@ class Product:
         self.description = description
         self._price = price
         self.quantity = quantity
-        Product.value = []
+        Product.items = []
 
     @classmethod
     def add_product(cls, args):
@@ -17,12 +17,14 @@ class Product:
         return new_product
 
     @property
-    def price(self):
-        return self._price
-
-    @property
     def new_price(self, value):
         if value <= 0:
             print("Введена некорректная цена")
             return value
+
+
+    @property
+    def new_price(self, value):
+        self._price = value
+        return self._price
 

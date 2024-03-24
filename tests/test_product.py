@@ -9,7 +9,7 @@ def product_apple():
 def test_product(product_apple):
     assert product_apple.name == 'Яблоко'
     assert product_apple.description == 'Антоновка'
-    assert product_apple.price == 50.00
+    assert product_apple._price == 50.00
     assert product_apple.quantity == 25
 
 
