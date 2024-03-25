@@ -17,7 +17,7 @@ class Product:
         return new_product
 
     @property
-    def price(self, ):
+    def price(self):
         return self.__price
 
     @price.setter

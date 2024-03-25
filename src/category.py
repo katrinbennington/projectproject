@@ -11,9 +11,9 @@ class Category:
         Category.cnt_unique_item += len(self.__products)
         Category.items = []
 
-    def add_items(self, price):
+    def add_product(self, value):
         """добавление продукта с новой ценой"""
-        self.__products.append(price)
+        self.__products.append(value)
 
     @property
     def products(self, items=''):
