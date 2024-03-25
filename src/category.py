@@ -1,3 +1,4 @@
+
 class Category:
     cnt_category = 0
     cnt_unique_item = 0
@@ -10,12 +11,12 @@ class Category:
         Category.cnt_unique_item += len(self.__products)
         Category.items = []
 
-    def add_product(self, value):
+    def add_items(self, price):
         """добавление продукта с новой ценой"""
-        self.__products.append(value)
+        self.__products.append(price)
 
     @property
     def products(self, items=''):
         for product in self.__products:
-            items += f'{product.name}, {product._price} руб. Остаток: {product.quantity} шт.\n'
+            items += f'{product.name}, {product.price} руб. Остаток: {product.quantity} шт.\n'
         return items
