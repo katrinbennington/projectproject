@@ -27,6 +27,5 @@ class Product:
         else:
             self.__price = value
 
-
-
-
+    def __add__(self, other):
+        return self.price * self.quantity + other.price * other.quantity

@@ -20,3 +20,9 @@ class Category:
         for product in self.__products:
             items += f'{product.name}, {product.price} руб. Остаток: {product.quantity} шт.\n'
         return items
+
+    def __str__(self):
+        return f'{self.name}, количество продуктов: {len(self)} шт.'
+
+    def __len__(self) -> int:
+        return len(self.__products)
